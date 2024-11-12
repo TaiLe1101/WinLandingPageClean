@@ -16,6 +16,14 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources/views"));
 
+app.get("/policy", (req, res) => {
+  return res.render("policy");
+});
+
+app.get("/service", (req, res) => {
+  return res.render("service");
+});
+
 app.get("/f/:slug", (req, res) => {
   const slug = req.params.slug;
   return res.render("home", { slug });
